@@ -1,5 +1,5 @@
 #python -m streamlit run main.py
-
+import os,io
 import streamlit as st
 from openai import OpenAI
 import y_summary as summary
@@ -57,6 +57,8 @@ def compareNotes(sum_lesson, notes):
     
 
 if __name__ == "__main__":
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'htr-2023-daym-d607b77d9662.json'
+
     client = summary.initialize()
 
     st.title("ProNotes")
